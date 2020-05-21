@@ -15,12 +15,16 @@ document.addEventListener("DOMContentLoaded", function() {
   redInputElement.addEventListener("input", updateValue)
   greenInputElement.addEventListener("input", updateValue)
   blueInputElement.addEventListener("input", updateValue)
+  redInputElement.addEventListener("focus", selectText)
+  greenInputElement.addEventListener("focus", selectText)
+  blueInputElement.addEventListener("focus", selectText)
 
   function updateValue() {
     const element = event.target
     if(element.type === "range"){
       element.parentElement.querySelector("input[type='number']").value = element.value
     } else {
+      element.value = validadeInput(parseInt(element.value))
       element.parentElement.querySelector("input[type='range']").value = element.value
     }
     updateRGB(redRangeElement.value, greenRangeElement.value, blueRangeElement.value)
@@ -34,4 +38,17 @@ function updateRGB(red, blue, green) {
   const result = `rgb(${red}, ${blue}, ${green})`
   code.textContent = result
   target.style.backgroundColor = result
+}
+
+function validadeInput(elementValue) {
+  if(elementValue < 0){
+    return "0"
+  } else if(elementValue > 255) {
+    return "255"
+  }
+  return elementValue
+}
+
+function selectText() {
+  event.target.select()
 }

@@ -1,0 +1,103 @@
+* {
+  box-sizing: border-box;
+  font-size: 100%;
+}
+
+body {
+  background-color: #222;
+  color: #3EE6AF;
+}
+
+section {
+  max-width: 700px;
+  margin: auto;
+  text-align: center;
+}
+
+.content{
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  justify-content: space-around;
+  
+}
+
+h1{
+  font-size: 3em;
+}
+
+input[type="range"] {
+  width: 100%;
+  height: 30px;
+}
+
+input[type="number"] {
+  height: 30px;
+  width: 100px;
+  text-align: center;
+  background-color: #222;
+  color: #fff;
+}
+
+.color-config {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  padding-left: 30px;
+  padding-right: 30px;
+}
+
+.range-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.range-container:not(:last-child) {
+  margin-bottom: 30px;
+}
+
+.range-container span {
+  align-self: flex-start;
+}
+
+.rgb-code {
+  display: block;
+  color: #fff;
+  font-size: 1.25em;
+  /* margin-bottom: 7.5px; */
+  height: 10%;
+}
+
+.result-container{
+  width: 50%;
+  padding: 0 5px;
+}
+
+.default-result {
+  background-color: rgb(0, 0, 0);
+}
+
+#rgbResult {
+  width: 100%;
+  height: 90%;
+  box-shadow: 5px 5px 5px #000;
+}
+
+@media (max-width: 768px) {
+  section{
+    max-width: 90%;
+    margin-bottom: 30px;
+  }
+  .content {
+    flex-direction: column;
+  }
+  .color-config {
+    width: 100%;
+  }
+  .result-container {
+    margin-top: 30px;
+    width: 100%;
+    height: 80vw;
+  }
+}

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RGB Calculator</title>
+
+  <link rel="stylesheet" href="./assets/css/style.css">
+</head>
+<body>
+
+  <main>
+    <section>
+      <div>
+        <h1>RGB Calculator</h1>
+      </div>
+
+      <div class="content">
+        <div class="color-config">
+          <div class="range-container">
+            <span>Red</span>
+            <input id="redRange" type="range" min="0" max="255" step="1" value="0">
+            <input id="redInput" type="number" value="0" min="0" max="255" step="1">
+          </div>
+          <div class="range-container">
+            <span>Green</span>
+            <input id="greenRange" type="range" min="0" max="255" step="1" value="0">
+            <input id="greenInput" type="number" value="0" min="0" max="255" step="1">
+          </div>
+          <div class="range-container">
+            <span>Blue</span>
+            <input id="blueRange" type="range" min="0" max="255" step="1" value="0">
+            <input id="blueInput" type="number" value="0" min="0" max="255" step="1">
+          </div>
+        </div>
+        <div class="result-container">
+          <span class="rgb-code">rgb(0, 0, 0)</span>
+          <div id="rgbResult" class="default-result">&nbsp;</div>
+        </div>
+      </div>
+
+    </section>
+  </main>
+  
+  <script src="./assets/js/script.js"></script>
+</body>
+</html>

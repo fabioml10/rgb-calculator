@@ -19,6 +19,8 @@ document.addEventListener("DOMContentLoaded", function() {
   greenInputElement.addEventListener("focus", selectText)
   blueInputElement.addEventListener("focus", selectText)
 
+  document.querySelector(".rgb-code").addEventListener("click", copyToClipboard)
+
   function updateValue() {
     const element = event.target
     if(element.type === "range"){
@@ -51,4 +53,16 @@ function validadeInput(elementValue) {
 
 function selectText() {
   event.target.select()
+}
+
+function copyToClipboard() {
+
+  const el = document.createElement('textarea');
+  el.value = event.target.textContent;
+  document.body.appendChild(el);
+  el.select();
+  document.execCommand('copy');
+  document.body.removeChild(el);
+
+  alert("Copiado para área de transferência: " + el.value);
 }

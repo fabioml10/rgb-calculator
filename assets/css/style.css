@@ -63,11 +63,13 @@ input[type="number"] {
 }
 
 .rgb-code {
-  display: block;
+  text-decoration: none;
+  display: inline-block;
   color: #fff;
   font-size: 1.25em;
   /* margin-bottom: 7.5px; */
   height: 10%;
+  cursor: pointer;
 }
 
 .result-container{
@@ -84,6 +86,17 @@ input[type="number"] {
   height: 90%;
   box-shadow: 5px 5px 5px #000;
 }
+
+/* #message {
+  margin-left: 10px;
+  display: none;
+}
+
+#message:target {
+  display: inline-block;
+  transition: all 1500ms linear;
+} */
+
 
 @media (max-width: 768px) {
   section{
